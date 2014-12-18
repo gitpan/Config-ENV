@@ -5,7 +5,7 @@ use warnings;
 
 use Carp;
 
-our $VERSION = '0.12';
+our $VERSION = '0.13';
 
 sub import {
 	my $class   = shift;
@@ -57,12 +57,12 @@ sub config ($$) { ## no critic
 	undef _data->{_merged}->{$name};
 }
 
-sub load ($) {
+sub load ($) { ## no critic
 	my $filename = shift;
 	my $hash = do "$filename";
 
 	croak $@ if $@;
-	croak $! unless defined $hash;
+	croak $^E unless defined $hash;
 	unless (ref($hash) eq 'HASH') {
 		croak "$filename does not return HashRef.";
 	}

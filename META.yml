@@ -3,25 +3,41 @@ abstract: 'Various config determined by %ENV'
 author:
   - 'cho45 <cho45@lowreal.net>'
 build_requires:
-  ExtUtils::MakeMaker: 6.36
+  ExtUtils::MakeMaker: '6.36'
+  Test::Fatal: '0'
+  Test::More: '0'
+  Test::Name::FromLine: '0'
 configure_requires:
-  ExtUtils::MakeMaker: 6.36
-distribution_type: module
-dynamic_config: 1
-generated_by: 'Module::Install version 1.04'
+  Module::Build: '0.38'
+dynamic_config: 0
+generated_by: 'Minilla/v2.1.1, CPAN::Meta::Converter version 2.141520'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
-  version: 1.4
+  version: '1.4'
 name: Config-ENV
 no_index:
   directory:
-    - inc
     - t
     - xt
+    - inc
+    - share
+    - eg
+    - examples
+    - author
+    - builder
+provides:
+  Config::ENV:
+    file: lib/Config/ENV.pm
+    version: '0.13'
 requires:
-  Exporter::Lite: 0
+  Exporter::Lite: '0'
 resources:
-  license: http://dev.perl.org/licenses/
+  bugtracker: https://github.com/cho45/Config-ENV/issues
+  homepage: https://github.com/cho45/Config-ENV
   repository: git://github.com/cho45/Config-ENV.git
-version: 0.12
+version: '0.13'
+x_contributors:
+  - 'Masayuki Matsuki <y.songmu@gmail.com>'
+  - 'ysasaki <aloelight@gmail.com>'
+  - 'issm <issmxx@gmail.com>'
